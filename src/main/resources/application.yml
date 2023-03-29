@@ -1,0 +1,32 @@
+server:
+  port: 9999
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    username: root
+    password: 123456
+    url: jdbc:mysql://192.168.204.130:3306/docker-db2209?serverTimezone=GMT%2B8
+  redis:
+    port: 6379
+    host: 192.168.204.130
+    password: 123456
+  mvc:
+    pathmatch:
+      matching-strategy: ant_path_matcher
+logging:
+  level:
+    com.lantu.hellovueadmin.*.mapper: debug
+#  config: classpath:log4j2.xml
+springfox:
+  documentation:
+    swagger-ui:
+      enabled: true
+mybatis-plus:
+  configuration:
+    map-underscore-to-camel-case: true
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+  global-config:
+    db-config:
+      logic-delete-field: isDeleted
+      logic-delete-value: 1
+      logic-not-delete-value: 0
